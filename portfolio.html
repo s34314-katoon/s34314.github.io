@@ -4,37 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Portfolio | Jinnipa Jairak</title>
+  <title>About Me | Jinnipa Jairak</title>
 
   <style>
-    /* =========================
-       พื้นฐานของเว็บไซต์
-    ========================== */
     * {
       box-sizing: border-box;
-      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      font-family: "Arial", "Tahoma", sans-serif;
+      font-family: Arial, Tahoma, sans-serif;
       background: linear-gradient(135deg, #ffaa9c, #ffd6cf);
       color: #333;
       line-height: 1.7;
     }
 
-    /* =========================
-       Navigation Bar
-    ========================== */
     nav {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255,255,255,0.9);
       backdrop-filter: blur(10px);
       padding: 15px;
       text-align: center;
       box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+      z-index: 100;
     }
 
     nav a {
@@ -42,45 +35,31 @@
       text-decoration: none;
       margin: 0 12px;
       font-weight: bold;
-      transition: 0.3s;
     }
 
     nav a:hover {
       color: #e76f61;
     }
 
-    /* =========================
-       กล่องหลัก
-    ========================== */
     .container {
       width: 90%;
-      max-width: 1100px;
+      max-width: 900px;
       margin: 40px auto;
     }
 
     .card {
       background: rgba(255,255,255,0.95);
       border-radius: 30px;
-      padding: 35px;
-      margin-bottom: 30px;
+      padding: 40px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      transition: 0.4s;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    h1, h2 {
+      color: #2c3e50;
     }
 
     h1 {
-      color: #2c3e50;
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      color: #2c3e50;
-      margin-bottom: 20px;
+      text-align: center;
     }
 
     h3 {
@@ -91,49 +70,13 @@
       font-size: 17px;
     }
 
-    /* =========================
-       Hero Section
-    ========================== */
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px 20px;
+    .info-box {
+      background: #fff0ed;
+      padding: 20px;
+      border-radius: 20px;
+      margin: 15px 0;
     }
 
-    .profile-img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 7px solid white;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-      animation: floating 3s ease-in-out infinite;
-    }
-
-    @keyframes floating {
-      0%, 100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-12px);
-      }
-    }
-
-    .hero h1 {
-      font-size: 45px;
-    }
-
-    .highlight {
-      color: #e76f61;
-    }
-
-    /* =========================
-       ปุ่ม
-    ========================== */
     .btn {
       display: inline-block;
       background: #2c3e50;
@@ -141,595 +84,107 @@
       padding: 12px 25px;
       text-decoration: none;
       border-radius: 30px;
-      margin: 10px 5px;
-      transition: 0.3s;
+      margin: 20px 5px 0;
     }
 
     .btn:hover {
       background: #e76f61;
-      transform: scale(1.05);
     }
 
-    .btn-pink {
-      background: #e76f61;
-    }
-
-    /* =========================
-       Skills
-    ========================== */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .skill {
-      background: #ffe3de;
-      color: #2c3e50;
-      padding: 12px 20px;
-      border-radius: 25px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .skill:hover {
-      background: #e76f61;
-      color: white;
-      transform: rotate(-3deg) scale(1.05);
-    }
-
-    /* =========================
-       ผลงาน
-    ========================== */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .project {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: 0.4s;
-    }
-
-    .project:hover {
-      transform: translateY(-10px) scale(1.02);
-    }
-
-    .project img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: 0.4s;
-    }
-
-    .project:hover img {
-      transform: scale(1.08);
-    }
-
-    .project-content {
-      padding: 20px;
-      text-align: left;
-    }
-
-    /* =========================
-       Timeline
-    ========================== */
-    .timeline {
-      border-left: 4px solid #e76f61;
-      padding-left: 25px;
-      text-align: left;
-    }
-
-    .timeline-item {
-      margin-bottom: 25px;
-      position: relative;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -35px;
-      top: 7px;
-      width: 15px;
-      height: 15px;
-      background: #e76f61;
-      border-radius: 50%;
-      border: 3px solid white;
-    }
-
-    /* =========================
-       Contact
-    ========================== */
-    .contact {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .contact-box {
-      background: #fff0ed;
-      padding: 20px;
-      border-radius: 20px;
-      transition: 0.3s;
-    }
-
-    .contact-box:hover {
-      background: #ffd5ce;
-      transform: translateY(-5px);
-    }
-
-    .contact-box a {
-      color: #2c3e50;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* =========================
-       Footer
-    ========================== */
-    footer {
-      background: #2c3e50;
-      color: white;
+    .center {
       text-align: center;
-      padding: 25px;
-      margin-top: 50px;
     }
-
-    /* =========================
-       Responsive สำหรับมือถือ
-    ========================== */
-    @media (max-width: 600px) {
-
-      body {
-        padding: 0;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 5px;
-        font-size: 14px;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .card {
-        padding: 25px 20px;
-        border-radius: 20px;
-      }
-
-      .profile-img {
-        width: 140px;
-        height: 140px;
-      }
-    }
-
   </style>
 </head>
 
 <body>
 
-  <!-- =========================
-       Navigation
-  ========================== -->
-
   <nav>
-    <a href="#home">หน้าหลัก</a>
-    <a href="#about">เกี่ยวกับฉัน</a>
-    <a href="#skills">ทักษะ</a>
-    <a href="#projects">ผลงาน</a>
-    <a href="#education">การศึกษา</a>
-    <a href="#contact">ติดต่อ</a>
+    <a href="index.html">หน้าหลัก</a>
+    <a href="portfolio.html">เกี่ยวกับฉัน</a>
+    <a href="education.html">การศึกษา</a>
+    <a href="activities.html">ผลงาน</a>
+    <a href="skills.html">ทักษะ</a>
+    <a href="contact.html">ติดต่อ</a>
   </nav>
-
-
-  <!-- =========================
-       Hero
-  ========================== -->
-
-  <section id="home" class="hero">
-
-    <div>
-
-      <!-- เปลี่ยนชื่อไฟล์รูปตรงนี้ได้ -->
-      <img
-        src="images/profile.jpg"
-        alt="รูปโปรไฟล์ของ Jinnipa"
-        class="profile-img"
-      >
-
-      <h1>
-        สวัสดีค่ะ 👋<br>
-        ฉันชื่อ <span class="highlight">จิณห์นิภา ใจรักษ์</span>
-      </h1>
-
-      <p>
-        Jinnipa Jairak
-      </p>
-
-      <p>
-        🎓 Student | 🧬 Medical Technology | 💻 Technology
-      </p>
-
-      <p>
-        ยินดีต้อนรับเข้าสู่ Portfolio ของฉัน
-      </p>
-
-      <a href="#about" class="btn btn-pink">
-        ✨ ทำความรู้จักฉัน
-      </a>
-
-      <a href="#projects" class="btn">
-        📂 ดูผลงาน
-      </a>
-
-    </div>
-
-  </section>
-
 
   <div class="container">
 
-    <!-- =========================
-         About Me
-    ========================== -->
+    <div class="card">
 
-    <section id="about" class="card">
+      <h1>🌷 About Me</h1>
 
-      <h2>🌷 About Me | เกี่ยวกับฉัน</h2>
+      <div class="info-box">
+        <h3>👩🏻‍🎓 ข้อมูลส่วนตัว</h3>
+
+        <p>
+          <strong>ชื่อ:</strong> จิณห์นิภา ใจรักษ์
+        </p>
+
+        <p>
+          <strong>ชื่อภาษาอังกฤษ:</strong> Jinnipa Jairak
+        </p>
+
+        <p>
+          <strong>ระดับการศึกษา:</strong> มัธยมศึกษาปีที่ 6
+        </p>
+      </div>
+
+      <h2>💗 ตัวฉัน</h2>
 
       <p>
         สวัสดีค่ะ ฉันชื่อ
         <strong>จิณห์นิภา ใจรักษ์ (Jinnipa Jairak)</strong>
+        ปัจจุบันกำลังศึกษาชั้นมัธยมศึกษาปีที่ 6
+        โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"
       </p>
 
       <p>
-        ปัจจุบันกำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 โรงเรียนบ้านบึง"อุตสาหกรรมนุเคราะห์" และมีความสนใจในด้าน
-        <strong>Medical Technology</strong>
-       ซึ่งเกี่ยวข้องกับคณะที่ดิฉันสนใจศึกษาต่อ คือ คณะเทคนิคการแพทย์ รวมถึงเทคโนโลยีและการนำความรู้ทางวิทยาศาสตร์ มาประยุกต์ใช้ให้เกิดประโยชน์
+        ดิฉันมีความสนใจในด้านวิทยาศาสตร์และสายสุขภาพ
+        โดยเฉพาะ <strong>Medical Technology</strong>
+        ซึ่งเป็นสาขาที่ดิฉันมีความตั้งใจที่จะศึกษาต่อ
+        ในระดับมหาวิทยาลัย
       </p>
 
       <p>
-        ดิฉันมีความสนใจในด้านสายสุขภาพตั้งแต่เริ่ม จากนั้นดิฉันได้รู้จักกับคณะเทคนิคการแพทย์ ดิฉันรู้สึกว่าตัวคณะได้ตอบโจทย์ความต้องการในการศึกษาต่อในระดับอุดมศึกษา ดิฉันจึงมีใจรักในการศึกษาต่อในคณะนี้
+        จุดเริ่มต้นของความสนใจด้านสายสุขภาพ
+        ทำให้ดิฉันได้ค้นคว้าและทำความรู้จักกับ
+        คณะเทคนิคการแพทย์มากขึ้น
+        และรู้สึกว่าสาขานี้ตอบโจทย์ความสนใจ
+        และเป้าหมายในการศึกษาต่อของดิฉัน
       </p>
 
       <p>
-        เว็บไซต์นี้จัดทำขึ้นเพื่อรวบรวมประวัติ
-        ทักษะ ผลงาน และประสบการณ์ต่าง ๆ
-        รวมถึงเป็นพื้นที่สำหรับแนะนำตัวเอง
+        ดิฉันจึงตั้งใจที่จะพัฒนาความรู้
+        ความสามารถ และประสบการณ์ของตนเอง
+        เพื่อเตรียมความพร้อมสำหรับการศึกษาต่อ
+        ในสายวิทยาศาสตร์สุขภาพ
       </p>
 
-    </section>
+      <h2>🌱 เป้าหมายของฉัน</h2>
 
+      <p>
+        ดิฉันต้องการนำความรู้ทางวิทยาศาสตร์
+        เทคโนโลยี และทักษะต่าง ๆ
+        มาประยุกต์ใช้ให้เกิดประโยชน์
+        และนำความรู้ที่ได้รับไปช่วยเหลือผู้อื่นในอนาคต
+      </p>
 
-    <!-- =========================
-         Skills
-    ========================== -->
+      <div class="center">
 
-    <section id="skills" class="card">
+        <a href="index.html" class="btn">
+          ⬅ Back
+        </a>
 
-      <h2>💡 Skills | ทักษะที่สนใจ</h2>
-
-      <div class="skills">
-
-        <div class="skill">🧬 Medical Technology</div>
-
-        <div class="skill">🔬 Laboratory</div>
-
-        <div class="skill">💻 HTML</div>
-
-        <div class="skill">🎨 Web Design</div>
-
-        <div class="skill">📊 Data Analysis</div>
-
-        <div class="skill">🤝 Teamwork</div>
-
-        <div class="skill">💬 Communication</div>
-
-        <div class="skill">📚 Learning</div>
+        <a href="education.html" class="btn">
+          Next ➡
+        </a>
 
       </div>
-
-    </section>
-
-
-    <!-- =========================
-         Projects
-    ========================== -->
-
-    <section id="projects" class="card">
-
-      <h2>🎨 My Projects | ผลงานของฉัน</h2>
-
-      <p>
-        ตัวอย่างผลงานและโปรเจกต์ที่สามารถนำมาแสดงใน Portfolio
-      </p>
-
-      <div class="projects">
-
-
-        <!-- Project 1 -->
-
-        <div class="project">
-
-          <img
-            src="images/project1.jpg"
-            alt="ผลงานชิ้นที่ 1"
-          >
-
-          <div class="project-content">
-
-            <h3>🔬 Project 01</h3>
-
-            <p>
-              <strong>ชื่อผลงาน:</strong>
-              การเข้าร่วมการคัดเลือกค่ายต้นกล้าส่องแสงครั้งที่ 7 ของคณะเทคนิคการแพทย์ มหาวิทยาลัยมหิดล
-            </p>
-
-            <p>
-              รายละเอียด:
-              ดิฉันได้มีโอกาสผ่านการรับเลือกเข้าค่ายที่คณะเทคนิคการแพทย์ มหาวิทยาลัยมหิดล ได้มีประสบการ์ณที่ดี จากการเข้าร่วมค่ายในครั้งนี้ ดิฉันได้ทำกิจกรรมที่หลากหลาย ทั้งการทำแล็ป สอบแล็ปกริ๊ง รวมถึงได้ความรู้ที่เกี่ยวกับตัวคณะโดยตรง ได้คำปรึกษาจากรุ่นพี่ในคณะ มีความทรงจำที่ดีที่ดิฉันประทับใจมาก ๆ
-            </p>
-
-            <p>
-              <strong>ทักษะที่ใช้:</strong>
-              Laboratory, Research, Teamwork
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- Project 2 -->
-
-        <div class="project">
-
-          <img
-            src="images/project2.jpg"
-            alt="ผลงานชิ้นที่ 2"
-          >
-
-          <div class="project-content">
-
-            <h3>💻 Project 02</h3>
-
-            <p>
-              <strong>ชื่อผลงาน:</strong>
-              ประสบการ์ณการทำงานที่โรงพยาบาลรามาธิบดี
-            </p>
-
-            <p>
-              รายละเอียด:
-              ดิฉันได้มีโอกาสฝึกงานที่โรงพยาบาลรามาธิบดี ซึ่งงานที่ดิฉันได้ทำคือ มีหน้าที่วัดความดัน และเดินส่งเอกสารให้บุคลากรทางการแพทย์ ดิฉันได้ประสบการ์ณ มุมมองใหม่ ๆ ในการทำงาน  ได้เรียนรู้การทำงานในโรงพยาบาลว่าเป็นอย่างไร
-            </p>
-
-            <p>
-              <strong>ทักษะที่ใช้:</strong>
-              Communication , Attention to Detail & Patience  
-            </p>
-
-          </div>
-
-        </div>
-
-
-        
-    </section>
-
-
-    <!-- =========================
-         Education
-    ========================== -->
-
-    <section id="education" class="card">
-
-      <h2>🎓 Education | การศึกษา</h2>
-
-      <div class="timeline">
-
-        <div class="timeline-item">
-
-          <h3>ปัจจุบัน</h3>
-
-          <p>
-            กำลังศึกษาในระดับการศึกษาปัจจุบัน ชั้นมัธยมศึกษาปีที่ 6
-            และมีความสนใจในสาขา
-            <strong>Medical Technology</strong>
-          </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-          <h3>ประสบการณ์การเรียนรู้</h3>
-
-          <p>
-            ศึกษาความรู้ด้านวิทยาศาสตร์
-            เทคโนโลยี การทำงานเป็นทีม
-            และการพัฒนาทักษะด้านดิจิทัล
-          </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-          <h3>เป้าหมายในอนาคต</h3>
-
-          <p>
-            พัฒนาความรู้และทักษะให้สามารถ
-            นำเทคโนโลยีมาประยุกต์ใช้ร่วมกับ
-            Medical Technology และสร้างผลงาน
-            ที่มีประโยชน์ต่อผู้อื่น
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         Personal Information
-    ========================== -->
-
-    <section class="card">
-
-      <h2>🌟 My Strengths | จุดเด่นของฉัน</h2>
-
-      <div class="contact">
-
-        <div class="contact-box">
-
-          <h3>📚 Learning</h3>
-
-          <p>
-            ชอบเรียนรู้สิ่งใหม่ ๆ
-            และพัฒนาตัวเองอยู่เสมอ
-          </p>
-
-        </div>
-
-
-        <div class="contact-box">
-
-          <h3>🔬 Science</h3>
-
-          <p>
-            มีความสนใจด้านวิทยาศาสตร์
-            และการทำงานอย่างเป็นระบบ
-          </p>
-
-        </div>
-
-
-        <div class="contact-box">
-
-          <h3>💻 Technology</h3>
-
-          <p>
-            สนใจการใช้เทคโนโลยี
-            เพื่อสร้างสรรค์ผลงาน
-          </p>
-
-        </div>
-
-
-        <div class="contact-box">
-
-          <h3>🤝 Teamwork</h3>
-
-          <p>
-            สามารถทำงานร่วมกับผู้อื่น
-            และแลกเปลี่ยนความคิดเห็นได้
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         Contact
-    ========================== -->
-
-    <section id="contact" class="card">
-
-      <h2>📱 Contact | ติดต่อฉัน</h2>
-
-      <p>
-        หากต้องการติดต่อหรือพูดคุยเกี่ยวกับผลงาน
-        สามารถติดต่อผ่านช่องทางต่าง ๆ ได้
-      </p>
-
-      <div class="contact">
-
-        <div class="contact-box">
-
-          <h3>📧 Email</h3>
-
-          <p>
-            <a href="mailto:katoon25511@gmail.com">
-              katoon25511@gmail.com
-            </a>
-          </p>
-
-        </div>
-
-
-        <div class="contact-box">
-
-          <h3>💻เบอร์โทรติดต่อ</h3>
-
-          <p>
-            <a href="0951231886" target="_blank">
-              0951231886
-            </a>
-          </p>
-
-        </div>
-
-
-        <div class="contact-box">
-
-          <h3>📸 Instagram</h3>
-
-          <p>
-            <a href="#" target="_blank">
-              My Instagram - ktxnp_
-            </a>
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         Back to top
-    ========================== -->
-
-    <div style="text-align:center;">
-
-      <a href="#home" class="btn">
-        ⬆ กลับขึ้นด้านบน
-      </a>
 
     </div>
 
   </div>
 
-
-  <!-- =========================
-       Footer
-  ========================== -->
-
-  <footer>
-
-    <p>
-      © 2026 Jinnipa Jairak
-    </p>
-
-    <p>
-      Made with 💗 HTML & CSS
-    </p>
-
-  </footer>
-
-
 </body>
 </html>
-เอาโค้ดลง github ยังไง และวิธีใส่รูป
